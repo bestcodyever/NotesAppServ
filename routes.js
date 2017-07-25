@@ -4,13 +4,12 @@ const knex = require('./db/knex')
 
 
 router.get("/", function(req, res) {
-getNotes().then((data) => {
-      res.json(data)
-})
-
+  getNotes().then((data) => {
+    res.json(data)
+  })
 });
 
-function getNotes(){
+function getNotes() {
   return knex('*').from('notes')
 }
 
